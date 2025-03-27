@@ -1,0 +1,235 @@
+.root {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: white;
+}
+
+.html {
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+.chatbot {
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  top: 120px;
+  cursor: pointer;
+}
+
+.main {
+  background: url("../assets/indianwoman.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.scrollText marquee {
+  background-color: #d0dffd;
+  font-size: 1.2rem;
+  color: red;
+  cursor: pointer;
+}
+
+.scrollText marquee:hover {
+  color: #0066ff;
+}
+
+.mainAfter {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: -1;
+}
+
+.authButtons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.authButton {
+  padding: 10px 20px;
+  background-color: #014bdb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.authButton:hover {
+  background-color: #0066ff;
+}
+
+
+
+
+.role-selection {
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 15px;
+}
+
+.role-selection label {
+  margin-right: 15px;
+  font-size: 14px; /* Smaller font size */
+  cursor: pointer;
+  display: flex; /* Align radio button and text */
+  align-items: center; /* Center align items */
+}
+
+.role-selection input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+  transform: scale(0.8); /* Smaller radio button size */
+}
+
+/* Flash Message Styles */
+.flash-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Green background for success */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.flash-message.error {
+  background-color: #f44336; /* Red background for error */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.title{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;  
+}
+
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #014bdb;
+  --clr: #0066ff;
+  --clr-alpha: #9c9c9c60;
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid #0066ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* Add blur effect for better contrast */
+}
+
+.login-logo-image {
+  margin-bottom: 1rem;
+}
+
+.login-logo-image img {
+  width: 150px; 
+  height: auto;
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  width: 100vw; 
+
+}
+
+
+.form .input-span {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.form .submit {
+  padding: 1rem 0.75rem;
+  width: 85%;
+  border-radius: 1rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form .submit:hover {
+  background-color: rgb(80, 80, 232);
+  color: black;
+  font-size: large;
+
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
+}
+

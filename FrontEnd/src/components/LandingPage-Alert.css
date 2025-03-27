@@ -1,0 +1,36 @@
+.main-alert {
+  position: absolute;
+  top: 300px;
+  right: 200px;
+  max-width: 500px;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-alert-box {
+  background-color: #d0dffd9c;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.main-alert-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-alert-slide div {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0066ff;
+  text-align: center;
+  border-bottom: 2px solid #014bdb;
+}
+
+.main-alert-slide p {
+  color: red;
+  cursor: pointer;
+  font-size: 1.1rem;
+  &:hover {
+    transform: scale(1.02);
+  }
+}

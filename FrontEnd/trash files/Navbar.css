@@ -1,0 +1,96 @@
+.main-alert {
+  position: absolute;
+  top: 300px;
+  right: 200px;
+  max-width: 500px;
+}
+.main-alert-box {
+  background-color: #d0dffd9c;
+  padding: 20px;
+  border-radius: 40px;
+}
+.main-alert-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-alert-slide div {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0066ff;
+  text-align: center;
+  border-bottom: 2px solid #014bdb;
+}
+.main-alert-slide p {
+  color: red;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+.nav-link.active {
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #014bdb;
+  padding: 0 10px;
+  .logo-image img {
+    height: 120px;
+    width: 120px;
+    margin-top: -10px;
+  }
+  ul {
+    margin: 0 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    font-size: 1.2rem;
+    &:hover {
+      color: #000000;
+      border-bottom: 3px solid #000000;
+    }
+  }
+  ul li img {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.chatbot {
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.chatbot:hover {
+  transform: scale(1.1);
+}
+
+.scroll-text {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+.scroll-text marquee {
+  color: #014bdb;
+  font-weight: 500;
+  :hover{
+    color: antiquewhite;
+  }
+}

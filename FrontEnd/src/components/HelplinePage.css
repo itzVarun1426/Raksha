@@ -1,0 +1,331 @@
+.helpline-page-container{
+  /* padding-top: 20px ; */
+  margin-top: 110px;
+}
+.helpline-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+  background-color: white;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
+  /* position: absolute;
+  top: 40%; */
+
+}
+/* 
+body {
+  background: url("../assets/indianwoman.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.helpline-container h1 {
+  text-align: center;
+  color: #014bdb;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.8rem;
+  width: 100%;
+  animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.helpline-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #66696f;
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.helpline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+
+.helpline-category {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #014bdb;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: slideInUp 0.6s ease-out backwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.helpline-category:nth-child(1) { animation-delay: 0.4s; }
+.helpline-category:nth-child(2) { animation-delay: 0.5s; }
+.helpline-category:nth-child(3) { animation-delay: 0.6s; }
+.helpline-category:nth-child(4) { animation-delay: 0.7s; }
+.helpline-category:nth-child(5) { animation-delay: 0.8s; }
+.helpline-category:nth-child(6) { animation-delay: 0.9s; }
+
+.helpline-category:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #0066ff;
+  box-shadow: 0 4px 8px rgba(1, 75, 219, 0.1);
+}
+
+.helpline-category h2 {
+  color: #014bdb;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #014bdb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.helpline-category h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #014bdb;
+  transition: width 0.3s ease;
+}
+
+.helpline-category:hover h2::after {
+  width: 100%;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #014bdb;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  background: #e9ecef;
+  transform: translateX(3px);
+  border-color: #014bdb;
+}
+
+.contact-item:hover::before {
+  transform: scaleY(1);
+}
+
+.contact-name {
+  font-weight: 500;
+  color: #014bdb;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+  transition: color 0.3s ease;
+}
+
+.contact-number {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-number::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(1, 75, 219, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.contact-number:hover {
+  color: #014bdb;
+}
+
+.contact-number:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.emergency-note {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #014bdb, #0066ff);
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(1, 75, 219, 0.15);
+  animation: slideInUp 0.8s ease-out 1s backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+.emergency-note p {
+  margin: 0.4rem 0;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .helpline-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .helpline-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .helpline-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .helpline-category {
+    padding: 1rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.4rem;
+    padding: 0.8rem;
+  }
+
+  .contact-name {
+    max-width: 100%;
+  }
+
+  .emergency-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+} 

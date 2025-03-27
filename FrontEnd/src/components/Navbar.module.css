@@ -1,0 +1,160 @@
+.navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav {
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #014bdb;
+  padding: 0 10px;
+}
+
+.logoImage img {
+  height: 120px;
+  width: 120px;
+  margin-top: -10px;
+}
+
+.nav ul {
+  margin: 0 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.nav ul li a:hover {
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.nav ul li img {
+  height: 24px;
+  width: 24px;
+}
+
+.chatbot {
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.chatbot:hover {
+  transform: scale(1.1);
+}
+
+.scrollText {
+  background-color: #c8d3de;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.scrollText:hover {
+  color: red;
+}
+
+.scrollText marquee {
+  color: #e30e0e;
+  font-weight: 500;
+}
+
+.mainAlert {
+  position: absolute;
+  top: 300px;
+  right: 200px;
+  max-width: 500px;
+}
+
+.mainAlertBox {
+  background-color: #d0dffd9c;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.mainAlertSlide {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mainAlertSlide div {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0066ff;
+  text-align: center;
+  border-bottom: 2px solid #014bdb;
+}
+
+.mainAlertSlide p {
+  color: red;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mainAlertSlide p:hover {
+  transform: scale(1.02);
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.navLink:hover {
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+
+/* Fix for React Router NavLink active state */
+.active {
+  color: #000000 !important;
+  border-bottom: 3px solid #000000;
+}
+
+.languageIcon {
+  height: 24px;
+  width: 24px;
+}
+
+.chatbotPopup {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 1001;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: min-content;
+}
+
+.closeButton {
+  background-color: #014bdb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.closeButton:hover {
+  background-color: #000000;
+}

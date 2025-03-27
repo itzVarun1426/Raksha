@@ -1,0 +1,94 @@
+.page5 {
+  padding: 40px 20px;
+  background-color: white;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.page5-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #014bdb;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.page5-header:hover {
+  transform: scale(1.02);
+}
+
+.page5-header p {
+  font-size: 42px;
+  color: #014bdb;
+  font-weight: 900;
+}
+
+.page5-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.page5-box .form-group {
+  width: 45%;
+  min-width: 280px; /* Minimum width before wrapping */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .page5-box .form-group {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+.page5-box input,
+.page5-box textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #d0dffd;
+  font-size: 18px;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.page5-box textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.page5-box input:focus,
+.page5-box textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: 2px solid #0066ff;
+}
+
+.page5-box button {
+  background-color: #0066ff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.page5-box button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+}

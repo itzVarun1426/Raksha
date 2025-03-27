@@ -1,0 +1,134 @@
+body {
+  background-size: cover;
+  position: relative;
+}
+
+.registerLogoImage img {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  left: 20px;
+  background-color: white;
+  border-radius: 90px;
+}
+
+.registerPageContainer {
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: whitesmoke;
+  color: #efefef;
+  border: 1px solid #014bdb;
+}
+
+.registerTitle {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #014bdb;
+}
+
+.signInText {
+  font-size: 14.5px;
+  color: #014bdb;
+  text-align: center;
+}
+
+.signInText a {
+  color: #0066ff;
+}
+
+.signInText a:hover {
+  text-decoration: underline green;
+}
+
+.inputGroup {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.inputLabel {
+  position: relative;
+}
+
+.inputField {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 55px;
+  padding: 20px 5px 5px 10px;
+  outline: 0;
+  border: 2px solid #014bdb;
+  border-radius: 10px;
+}
+
+.inputLabel .inputField + span {
+  color: #014bdb;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.inputLabel .inputField:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.inputLabel .inputField:focus + span,
+.inputLabel .inputField:valid + span {
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.submitButton {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #014bdb;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: whitesmoke;
+  border: 1px solid #014bdb;
+  transition: 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #014bdb;
+  color: whitesmoke;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

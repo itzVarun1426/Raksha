@@ -1,0 +1,143 @@
+.page2 {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+.page2-content {
+  position: relative;
+  display: flex;
+  height: 80%;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+.page2-left {
+  position: relative;
+  width: 55%;
+}
+.page2-left h2 {
+  text-align: center;
+  margin: 20px;
+  font-size: 2.2rem;
+  color: #014bdb;
+  cursor: pointer;
+}
+.page2-left:hover h2 {
+  animation: pulse 1s infinite;
+}
+.page2-left-button {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+.page2-left-button-card {
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #014bdb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.page2-left-button-card:hover {
+  transform: scale(1.1);
+}
+.page2-left-button-card img {
+  height: 50px;
+  width: 50px;
+}
+.page2-left-button-card h3 {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.page2-right {
+  position: relative;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page2-right h2 {
+  text-align: center;
+  margin: 20px;
+  color: #014bdb;
+  font-size: 2.2rem;
+}
+.page2-right-card {
+  border-radius: 20px;
+  height: 60%;
+  width: 80%;
+  background-color: #d0dffd;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.page2-right-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.page2-right-card input {
+  color: #014bdb;
+  width: 90%;
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+  margin: 10px 20px;
+  height: 30px;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.page2-right-card:hover input {
+  background-color: #f0f0f0;
+  transform: scale(1.02);
+}
+.page2-right-card-news {
+  margin: 15px 5px;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #014bdb;
+  background-color: #f0f0f0;
+  gap: 15px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 95%;
+  margin: 15px auto;
+}
+.page2-right-card-news:hover {
+  transform: translateX(5px);
+}
+.page2-right-card-news img {
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.page2-right-card-news p {
+  color: #014bdb;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

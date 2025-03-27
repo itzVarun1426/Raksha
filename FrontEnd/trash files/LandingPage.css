@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: white;
+}
+
+html {
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+.chatbot {
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  top: 120px;
+  cursor: pointer;
+}
+
+main {
+  background: url("../assets/indianwoman.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  .sroll-text {
+    marquee {
+      background-color: #d0dffd;
+      font-size: 1.2rem;
+      color: red;
+      cursor: pointer;
+      &:hover {
+        color: #0066ff;
+      }
+    }
+  }
+}
+
+main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);  /* Very subtle white overlay */
+  z-index: -1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add hover effect to marquee */
+.sroll-text marquee {
+  cursor: pointer;
+  &:hover {
+    color: #0066ff;
+  }
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.auth-button {
+  padding: 10px 20px;
+  background-color: #014bdb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+  background-color: #0066ff;
+}

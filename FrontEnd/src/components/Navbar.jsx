@@ -1,7 +1,3 @@
-
-
-
-
 // import { useEffect, useState } from "react";
 // import { NavLink } from "react-router-dom";
 // import styles from "./Navbar.module.css";
@@ -101,22 +97,22 @@
 //           </li>
 //         </ul>
 //       </nav>
-      // <div className={styles.scrollText}>
-      //   <marquee behavior="scroll">
-      //     {alerts.map((alert, index) => (
-      //       <span
-      //         key={index}
-      //         style={{
-      //           color: alert.type === "Warning" ? "red" : "black", // Highlight warnings in red
-      //           fontWeight: alert.type === "Warning" ? "bold" : "normal",
-      //           marginRight: "20px", // Add spacing between alerts
-      //         }}
-      //       >
-      //         {alert.message}
-      //       </span>
-      //     ))}
-      //   </marquee>
-      // </div>
+// <div className={styles.scrollText}>
+//   <marquee behavior="scroll">
+//     {alerts.map((alert, index) => (
+//       <span
+//         key={index}
+//         style={{
+//           color: alert.type === "Warning" ? "red" : "black", // Highlight warnings in red
+//           fontWeight: alert.type === "Warning" ? "bold" : "normal",
+//           marginRight: "20px", // Add spacing between alerts
+//         }}
+//       >
+//         {alert.message}
+//       </span>
+//     ))}
+//   </marquee>
+// </div>
 //       {isChatbotVisible && (
 //         <div className={styles.chatbotPopup}>
 //           <Chatbot />
@@ -130,12 +126,6 @@
 // }
 
 // export default Navbar;
-
-
-
-
-
-
 
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -230,7 +220,11 @@ function Navbar() {
           </li>
           <li>
             {isLoggedIn ? (
-              <button onClick={handleLogout} className={styles.logoutButton} style={{backgroundColor:"white" }}>
+              <button
+                onClick={handleLogout}
+                className={styles.logoutButton}
+                style={{ backgroundColor: "white" }}
+              >
                 Logout
               </button>
             ) : (
@@ -257,9 +251,8 @@ function Navbar() {
         </ul>
       </nav>
       <div className={styles.scrollText}>
-        <marquee >
-        {/* behavior="scroll" */}
-          {alerts.map((alert, index) => ( 
+        <marquee behavior="scroll">
+          {alerts.map((alert, index) => (
             <span
               key={index}
               style={{

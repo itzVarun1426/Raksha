@@ -126,26 +126,23 @@
 
 // export default RegisterPage;
 
-
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import rakshaLogo from "../assets/raksha-logo.png";
-import "./RegisterPage.module.css";
+import styles from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [aadhaarNumber, setAadhaarNumber] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [password, setPassword] = useState("");
-  // const [role, setRole] = useState("user"); 
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form inputs
     if (!email || !aadhaarNumber || !mobileNumber || !password) {
       setError("All fields are required.");
       return;
@@ -163,18 +160,16 @@ const RegisterPage = () => {
       return;
     }
 
-    // Send data to the backend
     axios
       .post("http://localhost:3001/register", {
         email,
         aadhaarNumber,
         mobileNumber,
         password,
-        // role, // Include role in the registration data
       })
       .then((response) => {
         console.log(response.data);
-        navigate("/login"); // Redirect to login page after successful registration
+        navigate("/login");
       })
       .catch((err) => {
         console.error(err);
@@ -183,74 +178,55 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="register-page-container">
-      <Link className="register-logo-image" to="/">
+    <div className={styles.registerPageContainer}>
+      <Link className={styles.registerLogoImage} to="/">
         <img src={rakshaLogo} alt="logo" />
       </Link>
-      <form className="form" onSubmit={handleSubmit}>
-        <p className="title">Register</p>
+      <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <p className={styles.registerTitle}>Register</p>
 
-        {/* Role Selection */}
-        {/* <div className="role-selection">
-          <label>
-            <input
-              type="radio"
-              name="role"
-              value="user"
-              checked={role === "user"}
-              onChange={() => setRole("user")}
-            />
-            User
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="role"
-              value="admin"
-              checked={role === "admin"}
-              onChange={() => setRole("admin")}
-            />
-            Admin
-          </label>
-        </div> */}
-
-        <input style={{width:"80%"}}
+        <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className={styles.inputField}
         />
-        <br />
         <input
           type="text"
           placeholder="Aadhaar Number"
           value={aadhaarNumber}
           onChange={(e) => setAadhaarNumber(e.target.value)}
           required
+          className={styles.inputField}
         />
-        <br />
         <input
           type="tel"
           placeholder="Mobile Number"
           value={mobileNumber}
           onChange={(e) => setMobileNumber(e.target.value)}
           required
+          className={styles.inputField}
         />
-        <br />
-        <input 
-          style={{width:"80%"}} 
+        <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className={styles.inputField}
         />
-        <br />
-        {error && <p className="error">{error}</p>}
-        <button type="submit">Register</button>
-        <p>Already have an account?</p>
-        <Link to="/login">Login</Link>
+
+        {error && <p className={styles.error}>{error}</p>}
+
+        <button type="submit" className={styles.submitButton}>
+          Register
+        </button>
+
+        <p className={styles.signInText}>
+          Already have an account? <Link to="/login">Sign in</Link>
+        </p>
       </form>
     </div>
   );

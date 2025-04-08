@@ -27,11 +27,9 @@
 }
 
 .main {
-  /* background: url("../assets/indianwoman.jpg");
-    background-size: cover;
-    background-repeat: no-repeat; */
-  height: 130px;
+  height: 120px;
   width: 100vw;
+  padding-top: 40px;
 }
 
 .scrollText marquee {

@@ -1,128 +1,41 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import styles from "./LoginPage.module.css";
-// import rakshaLogo from "../assets/raksha-logo.png";
-
-// function LoginPage() {
-//   return (
-//     <div className={styles.elementsContainer}>
-//       <Link className={styles.loginLogoImage} to="/">
-//         <img src={rakshaLogo} alt="logo" />
-//       </Link>
-//       <div className={styles.formContainer}>
-//         <form className={styles.form}>
-//           <div className={styles.loginHeading}>Login</div>
-//           <span className={styles.inputSpan}>
-//             <input type="email" name="email" id="email" placeholder=" " />
-//             <label htmlFor="email" className={styles.label}>
-//               Email
-//             </label>
-//           </span>
-//           <span className={styles.inputSpan}>
-//             <input
-//               type="password"
-//               name="password"
-//               id="password"
-//               placeholder=" "
-//             />
-//             <label htmlFor="password" className={styles.label}>
-//               Password
-//             </label>
-//           </span>
-//           <span className={styles.forgotPassword}>
-//             <a href="#">Forgot password?</a>
-//           </span>
-//           <input className={styles.submit} type="submit" value="Log in" />
-//           <span className={styles.signupLink}>
-//             Don't have an account? <Link to="/register">Sign up</Link>
-//           </span>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default LoginPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { useState } from "react";
 import axios from "axios";
-import "./LoginPage.module.css";
+import styles from "./LoginPage.module.css"; // Correct import
 import { Link, useNavigate } from "react-router-dom";
-import NavBar from './Navbar';
+import NavBar from "./Navbar";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("user"); 
+  const [role, setRole] = useState("user");
   const [flashMessage, setFlashMessage] = useState("");
   const navigate = useNavigate();
 
-
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  
-  //   const loginEndpoint = role === "admin" ? "http://localhost:3001/admin/login" : "http://localhost:3001/login";
-  
-  //   axios
-  //     .post(loginEndpoint, { email, password })
-  //     .then((result) => {
-  //       console.log(result);
-  //       if (result.data === "Success") {
-  //         setFlashMessage(
-  //           `Login Successful! Redirecting to ${
-  //             role === "admin" ? "Admin Dashboard" : "User Dashboard"
-  //           }...`
-  //         );
-  //         setTimeout(() => {
-  //           setFlashMessage("");
-  //           navigate(role === "admin" ? "/admindashboard" : "/userdashboard"); // Redirect based on role
-  //         }, 1000);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setFlashMessage("Login Failed. Please check your credentials.");
-  //     });
-  // };
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const loginEndpoint = role === "admin" ? "http://localhost:3001/admin/login" : "http://localhost:3001/login";
-  
+
+    const loginEndpoint =
+      role === "admin"
+        ? "http://localhost:3001/admin/login"
+        : "http://localhost:3001/login";
+
     axios
       .post(loginEndpoint, { email, password })
       .then((result) => {
         console.log(result);
-  
         if (result.data === "Success") {
-          // Save login status and role in localStorage
           localStorage.setItem("loggedIn", true);
-          localStorage.setItem("role", role); // Store role to identify admin or user
-  
+          localStorage.setItem("role", role);
+
           setFlashMessage(
             `Login Successful! Redirecting to ${
               role === "admin" ? "Admin Dashboard" : "User Dashboard"
             }...`
           );
-  
+
           setTimeout(() => {
             setFlashMessage("");
-            navigate(role === "admin" ? "/admindashboard" : "/userdashboard"); // Redirect based on role
+            navigate(role === "admin" ? "/admindashboard" : "/userdashboard");
           }, 1000);
         }
       })
@@ -131,27 +44,21 @@ function LoginPage() {
         setFlashMessage("Login Failed. Please check your credentials.");
       });
   };
-  
- 
-  
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <NavBar />
-      
-      <div className="form-container">
-        {/* Flash Message */}
+
+      <div className={styles.formWrapper}>
         {flashMessage && (
-          <div className="flash-message">
-            <p>{flashMessage}</p>
-          </div>
+          <div className={styles.flashMessage}>{flashMessage}</div>
         )}
 
-        <div className="form-container">
-          <form className="form" onSubmit={handleSubmit}>
-            <h2 className="title">LOGIN</h2>
-            {/* Radio Buttons for Role Selection */}
-            <div className="role-selection">
+        <div className={styles.formContainer}>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <h2 className={styles.title}>LOGIN</h2>
+
+            <div className={styles.roleSelection}>
               <label>
                 <input
                   type="radio"
@@ -173,8 +80,9 @@ function LoginPage() {
                 Admin
               </label>
             </div>
-            <span className="input-span">
-              <label htmlFor="email" className="label">
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="email" className={styles.label}>
                 Email
               </label>
               <input
@@ -182,13 +90,14 @@ function LoginPage() {
                 name="email"
                 id="email"
                 value={email}
+                className={styles.input}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-            </span>
-            <br />
-            <span className="input-span">
-              <label htmlFor="password" className="label">
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="password" className={styles.label}>
                 Password
               </label>
               <input
@@ -196,17 +105,28 @@ function LoginPage() {
                 name="password"
                 id="password"
                 value={password}
+                className={styles.input}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-            </span>
-            <span className="span">
-              <a href="/forgot">Forgot password?</a>
-            </span>
-            <input className="submit" type="submit" value="LOGIN" />
-            <span className="span">
-              Dont have an account? <Link to="/register" style={{textDecoration:"none"}}>Sign up</Link>
-            </span>
+            </div>
+
+            <div className={styles.linkContainer}>
+              <Link to="/forgot" className={styles.link}>
+                Forgot password?
+              </Link>
+            </div>
+
+            <input className={styles.submit} type="submit" value="LOGIN" />
+
+            <div className={styles.linkContainer}>
+              <span>
+                Don't have an account?{" "}
+                <Link to="/register" className={styles.link}>
+                  Sign up
+                </Link>
+              </span>
+            </div>
           </form>
         </div>
       </div>
@@ -215,7 +135,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
-
-
-

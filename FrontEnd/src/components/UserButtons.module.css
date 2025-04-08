@@ -1,83 +1,17 @@
-/* 
+/* User Buttons Container */
 .UserButtonsContent {
   height: 90vh;
   width: 100vw;
   padding: 40px;
-  background-color: blue;
+  background-color: #0047ab; /* Darker blue for better contrast */
   border-radius: 0px 0px 40px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
 }
-.ContentUpBoxButtons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  .UserButtons {
-    height: 120px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-    border: 2px solid black;
 
-    img {
-      height: 70%;
-      width: 50%;
-    }
-    div {
-      color: white;
-      margin: 5px;
-      font-weight: bold;
-    }
-  }
-}
-.UserButtonsContentDown {
-  border: 2px solid black;
-  border-radius: 50px;
-  height: 60%;
-  width: 70%;
-  .ContentDownBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    height: 100%;
-    .ContentDownBoxHeading {
-      font-size: 30px;
-      color: white;
-      font-weight: bold;
-    }
-    .ContentDownBoxAlerts {
-      border: 2px solid black;
-      background-color: white;
-      border-radius: 10px;
-      height: 70%;
-      width: 80%;
-    }
-  }
-} */
-
-
-
-
-/* Container for the buttons component */
-.UserButtonsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(37, 37, 248);
-  height: 100vh;
-  /* border-radius: 0 0 40px 40px; */
-  padding: 40px;
-  margin-bottom: 60px;
-}
-
-/* Upper section of the buttons content */
+/* Buttons Section */
 .ContentUpBoxButtons {
   display: flex;
   justify-content: center;
@@ -91,16 +25,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(173, 232, 238);
+  background-color: #0047ab;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 10px; /* Rounded corners */
+  transition: all 0.3s ease;
   cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
 }
 
 .UserButtons:hover {
-  background-color: darkblue;
-  transform: scale(1.05);
+  background-color: #00308f; /* Darker blue on hover */
 }
 
 .UserButtons img {
@@ -114,6 +47,292 @@
   font-weight: bold;
 }
 
+/* Lower Section */
+.UserButtonsContentDown {
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 60%;
+  width: 70%;
+  background: #f3f3f3;
+}
+
+.ContentDownBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.ContentDownBoxHeading {
+  font-size: 28px;
+  color: #0047ab;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Alerts Section */
+.ContentDownBoxAlerts {
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 10px;
+  height: 70%;
+  width: 80%;
+  overflow-y: auto; /* Enables scrolling if there are many alerts */
+}
+
+/* Shelter Popup Overlay */
+.ShelterPopupOverlay {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Shelter Popup */
+.ShelterPopup {
+  background: white;
+  padding: 20px;
+  width: 85%;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+
+  /* Fixed height and scrollable */
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Close Button */
+.CloseButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.CloseButton:hover {
+  background: darkred;
+}
+
+/* Shelter Grid Layout */
+.ShelterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+/* Shelter Card */
+.ShelterCard {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.ShelterCard:hover {
+  transform: translateY(-5px);
+}
+
+.ShelterCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.ShelterCard h3 {
+  margin: 10px 0;
+  color: #0047ab;
+}
+
+.ShelterCard p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Map Button */
+.MapButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.MapButton:hover {
+  background: #0056b3;
+}
+.PopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Popup {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.Card {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 250px;
+}
+
+.CloseButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Missing Person Popup */
+.ShelterPopupOverlay {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShelterPopup {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.PopupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.PopupHeader h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.CloseButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+}
+
+.CloseButton:hover {
+  color: red;
+}
+
+/* Form Styling */
+.ShelterPopup input,
+.ShelterPopup select,
+.ShelterPopup textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.ShelterPopup input[type="file"] {
+  border: none;
+  padding: 5px;
+}
+
+.ShelterPopup button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ShelterPopup button:hover {
+  background: #0056b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 /* Lower section of the buttons content */
 .UserButtonsContentDown {
   border: 2px solid black;

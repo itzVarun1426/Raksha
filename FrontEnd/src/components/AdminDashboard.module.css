@@ -1,3 +1,325 @@
+.AdminDashboardContainer {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+.AdminDashboardContent {
+  height: 80%;
+  width: 80%;
+  border-radius: 25px;
+  background-color: #0047ab;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AdminDashboardContentLeft {
+  width: 90%;
+  height: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.AdminDashboardContentLeftHeading {
+  margin: 20px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.AdminDashboardButton {
+  height: 150px;
+  width: 200px;
+  background-color: antiquewhite;
+  color: blue;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.AdminDashboardButton:hover {
+  background-color: #7094dd; /* Darker blue on hover */
+}
+
+.AdminDashboardContentLeftButtons {
+  display: flex;
+  margin: 20px 10px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.AdminDashboardContentRight {
+  margin: 3px;
+  padding: 5px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  width: 40%;
+  height: 99%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.MissingPersonsList {
+  width: 100%;
+  padding: 10px;
+  color: #0047ab;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.MissingPersonsList h3 {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #0047ab;
+  margin-bottom: 10px;
+}
+
+.MissingPersonsList ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.MissingPersonsList li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.MissingPersonsList li:last-child {
+  border-bottom: none;
+}
+
+.MissingPersonsList strong {
+  color: #222;
+}
+
+.AdminDashboardContentRightHeading {
+  margin: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: blue;
+}
+
+/* Floating Form Styles */
+.FormOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FormContainer {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.InputField {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.FormButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SubmitButton {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.CancelButton {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.SubmitButton:hover {
+  background: #218838;
+}
+
+.CancelButton:hover {
+  background: #c82333;
+}
+.SafeZoneContainer {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.SafeZoneGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.SafeZoneCard {
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.SafeZoneCard a {
+  display: block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+.SafeZonesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 10px;
+}
+
+.SafeZoneCard {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  color: black;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.SafeZoneCard img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  background-color: cadetblue;
+  color: black;
+  p strong {
+    color: black;
+  }
+}
+.reportPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  height: 600px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: black;
+  border: none;
+  cursor: pointer;
+}
+
+.SafeZonesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+  padding: 10px;
+}
+
+.SafeZoneCard {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.SafeZoneCard img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.SafeZoneCard a {
+  display: block;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: none;
+}
+
+.PreviewImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.report-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: block; /* Ensure visibility */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .Modal textarea,
 .Modal input[type="text"] {
   width: 100%;
@@ -7,7 +329,6 @@
   border-radius: 4px;
   font-size: 14px;
 }
-
 
 .ModalOverlay {
   position: fixed;
@@ -109,68 +430,5 @@
   to {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-
-.AdminDashboardContainer {
-  width: 100vw;
-  height: 100vh;
-  background: wheat;
-}
-
-.AdminDashboardContent {
-  height: 80%;
-  width: 80%;
-  border-radius: 25px;
-  background-color: blue;
-  margin: 10px auto;
-  /* border: 4px solid red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.AdminDashboardContentLeft {
-  /* border: 4px solid green; */
-  width: 70%;
-  height: 99%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
-  .AdminDashboardContentLeftHeading {
-    margin: 20px;
-    font-size: 2rem;
-    font-weight: 500;
-  }
-  .AdminDashboardButton {
-    height: 150px;
-    width: 200px;
-    background-color: antiquewhite;
-    color: blue;
-  }
-  .AdminDashboardContentLeftButtons {
-    display: flex;
-    margin: 20px 10px;
-    padding: 10px;
-    gap: 10px;
-  }
-}
-.AdminDashboardContentRight {
-  margin: 3px;
-  padding: 5px;
-  background-color: white;
-  border-radius: 20px;
-  width: 30%;
-  height: 99%;
-  display: flex;
-  justify-content: center;
-  padding: 30px;
-  .AdminDashboardContentRightHeading {
-    margin: 20px;
-    font-size: 2rem;
-    color: blue;
-    font-weight: 500;
   }
 }

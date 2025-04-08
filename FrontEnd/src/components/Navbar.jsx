@@ -131,7 +131,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import chatbotIcon from "../assets/chatbot.png";
-import rakshaLogo from "../assets/raksha-logo.png";
+import rakshaLogo from "../assets/Raksha-logo.png";
 import languageIcon from "../assets/language.png";
 import Chatbot from "./Chatbot";
 

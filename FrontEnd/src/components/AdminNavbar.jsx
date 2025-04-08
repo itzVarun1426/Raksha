@@ -2,7 +2,7 @@ import  { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./AdminNavbar.module.css";
 import chatbotIcon from "../assets/chatbot.png";
-import rakshaLogo from "../assets/raksha-logo.png";
+import rakshaLogo from "../assets/Raksha-logo.png";
 import Chatbot from "./Chatbot";
 
 function Navbar() {

@@ -129,7 +129,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import rakshaLogo from "../assets/raksha-logo.png";
+import rakshaLogo from "../assets/Raksha-logo.png";
 import styles from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
